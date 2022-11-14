@@ -1,15 +1,16 @@
 
 import React from 'react'
 import './header.css'
+import Strip from './strip'
 
 function Nav() {
     return (
-        <div className='container-fluid'>
-            <div className='container px-5'>
-                <nav className='d-flex'>
+        <div className='container-fluid '>
+            <div className='container'>
+                <nav className='col-md-6 d-flex '>
                     <div className='d-flex justify-content-between ul1'>
             
-                        <li className='img'></li>
+                        <div className='img'></div>
                         <li>Start</li>
                         <li>Sell</li>
                         <li>Market</li>
@@ -21,8 +22,9 @@ function Nav() {
                         <li>Login</li>
                    
                     </div>
-                    < button className='btn btn1'>Start free trial</button>
+                    < button className='btn btn-nav'>Start free trial</button>
                 </nav>
+                <Strip/>
             </div>
 
         </div>
