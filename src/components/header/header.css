@@ -1,0 +1,39 @@
+.container{
+    background-color: #002d2d;
+    min-width: 1800px;
+    min-height: 80px;
+    
+    
+}
+nav {
+    color: aliceblue;
+    font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-size: 1em;
+    position:sticky;
+}
+li {
+list-style: none;
+    padding: 36px;
+}
+li:hover{
+    font-size: large;
+}
+.ul1 {
+    margin-right: 462px;
+}
+.btn1 {
+    background-color: #008060;
+    color: aliceblue;
+    border-width: 0.125em;
+    border-color: #008060;
+    padding: 0.8125em 1.25em;
+    max-height: 50px;
+    min-width: 150px;
+    margin-top: 20px;
+
+}
+.btn1:hover {
+    color: aliceblue;
+    border-color: #008060;
+    background-color: #002d2d;
+}
