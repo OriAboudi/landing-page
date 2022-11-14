@@ -30,7 +30,6 @@ li:hover{
     max-height: 50px;
     min-width: 150px;
     margin-top: 20px;
-
 }
 .btn1:hover {
     color: aliceblue;
@@ -38,9 +37,34 @@ li:hover{
     background-color: #002d2d;
 }
 .img{
-    min-height: 150px;
-    width: 150px;
+    max-height: 30px;
+    width: 160px;
+    background-image: url(/public/images/Logo.png);
     background-position: center;
     background-size: cover;
-    background-image: url(images/Shopify-Logo.png);
+    margin-right: 20px;
+    margin-left: 50px;
+    margin-top: 7px;
+
+   
+}
+.strip-img2{
+    background-image: url(/public/images/img_secion1.webp);
+    min-height: 300px;
+    width: 300px;
+    background-position: center;
+    background-size: cover;
+  
+}
+
+/* strip */
+
+.h2-strip{
+    color: aliceblue;
+    font-size: 4.5em;
+    line-height: 4.455rem;
+    letter-spacing: -0.084375rem;
+}
+p{
+    color: aliceblue;
 }
