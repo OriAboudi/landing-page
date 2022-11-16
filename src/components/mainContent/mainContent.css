@@ -1,0 +1,68 @@
+
+.secion1 h2 {
+    font-weight: 500;
+    font-size: 3.75em;
+    line-height: 4.5rem;
+    letter-spacing: -0.0625rem;
+    padding-right: 24.9999999999%;
+    margin-top: 36px;
+    margin-left: 56px;
+    max-height: 300px;
+}
+.img-secion1{
+    background-image: url(/public/images/secion2.webp);
+    min-height: 450px;
+    border-radius: 20px;
+    margin-top: 80px;
+}
+
+/* secion2 */
+.main-secion2{
+    margin-top: 150px;
+}
+.h2-secion{
+
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
+    font-feature-settings: 'kern', 'liga', 'clig', 'calt', 'dlig';
+    display: block;
+    color: #212326;
+    line-height: 1.3333333333;
+    font-weight: 400;
+    font-family: ShopifySans, Helvetica, Arial, sans-serif;
+
+}
+.p1{
+    font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
+    color: #6b7177;
+    font-weight: 400;
+}
+.p2{
+    color: #008060;
+    padding-right: 1.2em;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.img-secion2{
+    background-image: url(/public/images/secion5.webp);
+    min-height: 480px;
+    width: 400px;
+    border-radius: 20px;
+    margin-top: 80px;
+    margin: 0px;
+}
+
+/* section3 */
+.secion3{
+    padding-left: 130px;
+}
+
+.img-secion3{
+    background-image: url(/public/images/secion6.webp);
+    min-height: 460px;
+    width: 670px;
+    border-radius: 20px;
+    margin-top: 80px;
+    margin: 0px;
+}

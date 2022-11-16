@@ -6,7 +6,7 @@ import Strip from './strip'
 function Nav() {
     return (
         <div className='container-fluid '>
-            <div className='container'>
+            <div className='container container-nav'>
                 <nav className='col-md-6 d-flex '>
                     <div className='d-flex justify-content-between ul1'>
             

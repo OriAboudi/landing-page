@@ -1,10 +1,16 @@
 .container {
-    background-color: #002d2d;
-    color: aliceblue;
+
+  
     padding: 0px;
 }
 
+.container-nav {
+    color: aliceblue;
+    background-color: #002d2d;
+}
+
 nav {
+
     font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
     font-size: 1em;
     background-color: #002d2d;
@@ -68,7 +74,10 @@ li:hover {
 }
 
 /* strip */
-.conteainer-strip {}
+.conteainer-strip {
+    color: aliceblue;
+    background-color: #002d2d;
+}
 
 .main-strip {
     padding-left: 100px;
