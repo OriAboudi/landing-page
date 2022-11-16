@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from './footer/footer'
 import Nav from './header/nav'
 import Secion2 from './mainContent/secion2'
 import Secion3 from './mainContent/secion3'
@@ -12,7 +11,7 @@ function Home() {
         <Section1/>
         <Secion2/>
         <Secion3/>
-        <Footer/>
+      
     </div>
   )
 }
