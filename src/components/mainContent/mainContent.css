@@ -65,11 +65,13 @@
 
 .img-secion3 {
     background-image: url(/public/images/secion6.webp);
-    min-height: 460px;
-    width: 670px;
+    min-height: 410px;
+    width: 600px;
     border-radius: 20px;
     margin-top: 80px;
     margin: 0px;
+    background-position: center;
+    background-size: cover;
 }
 
 

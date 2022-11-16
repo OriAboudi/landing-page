@@ -17,7 +17,7 @@ function Nav() {
                         <li>Manage</li>
                     </div>
                     <div className='d-flex   '>
-                        <li>Pricing</li>
+                    
                         <li>Learn</li>
                         <li>Login</li>
                    
