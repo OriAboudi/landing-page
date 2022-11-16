@@ -1,4 +1,3 @@
-
 .secion1 h2 {
     font-weight: 500;
     font-size: 3.75em;
@@ -9,7 +8,8 @@
     margin-left: 56px;
     max-height: 300px;
 }
-.img-secion1{
+
+.img-secion1 {
     background-image: url(/public/images/secion2.webp);
     min-height: 450px;
     border-radius: 20px;
@@ -17,10 +17,11 @@
 }
 
 /* secion2 */
-.main-secion2{
+.main-secion2 {
     margin-top: 150px;
 }
-.h2-secion{
+
+.h2-secion {
 
     font-kerning: normal;
     font-variant-ligatures: common-ligatures contextual discretionary-ligatures;
@@ -32,19 +33,21 @@
     font-family: ShopifySans, Helvetica, Arial, sans-serif;
 
 }
-.p1{
+
+.p1 {
     font-family: ShopifySans, Helvetica, Arial, Lucida Grande, sans-serif;
     color: #6b7177;
     font-weight: 400;
 }
-.p2{
+
+.p2 {
     color: #008060;
     padding-right: 1.2em;
     font-weight: 700;
     line-height: 1.5;
 }
 
-.img-secion2{
+.img-secion2 {
     background-image: url(/public/images/secion5.webp);
     min-height: 480px;
     width: 400px;
@@ -54,15 +57,64 @@
 }
 
 /* section3 */
-.secion3{
+.secion3 {
     padding-left: 130px;
 }
 
-.img-secion3{
+.img-secion3 {
     background-image: url(/public/images/secion6.webp);
     min-height: 460px;
     width: 670px;
     border-radius: 20px;
     margin-top: 80px;
     margin: 0px;
+}
+
+
+@media (max-width: 968px) {
+    .secion1 h2 {
+        font-weight: 500;
+        font-size: 2.75em;
+        line-height: 3.5rem;
+        letter-spacing: -0.0625rem;
+        padding-right: 0%;
+        margin-top: 36px;
+        margin-left: 56px;
+        max-height: 300px;
+        margin-bottom: 150px;
+    }
+
+    .img-secion1 {
+        background-image: url(/public/images/secion2.webp);
+        width: 450px;
+        margin: auto;
+        min-height: 250px;
+        border-radius: 20px;
+        margin-top: 80px;
+        background-position: center;
+        background-size: cover;
+    }
+    .main-secion2 {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .main-secion3 {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .img-secion3 {
+        background-image: url(/public/images/secion6.webp);
+        min-height: 260px;
+        width: 400px;
+        border-radius: 20px;
+        margin-top: 80px;
+        margin: 0px;
+        background-position: center;
+        background-size: cover;
+    }
+    .secion3{
+            padding: 36px;
+    }
+
+
 }
