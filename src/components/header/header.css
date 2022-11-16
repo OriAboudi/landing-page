@@ -1,12 +1,9 @@
-.container {
 
-  
-    padding: 0px;
-}
 
 .container-nav {
     color: aliceblue;
     background-color: #002d2d;
+    padding: 0px;
 }
 
 nav {
@@ -22,9 +19,9 @@ nav {
 
 li {
     list-style: none;
-    padding: 36px;
-    font-weight: 500;
-    font-size: 1.125em;
+    padding: 36px;  
+    font-weight: 500; 
+     font-size: 1em; 
     display: block;
 }
 
@@ -44,11 +41,11 @@ li:hover {
     color: aliceblue;
     border-width: 0.125em;
     border-color: #008060;
-    padding: 0.8125em 1.25em;
+    /* padding: 0.8125em 1.25em; */
     max-height: 50px;
-    min-width: 150px;
+    min-width: 130px;
     margin-top: 20px;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
 
 .btn1:hover {
@@ -56,13 +53,13 @@ li:hover {
     border-color: #008060;
     background-color: #002d2d;
     color: aliceblue;
-    font-weight: 500;
+    /* font-weight: 500; */
 
 }
 
 .img {
-    height: 30px;
-    width: 170px;
+    height: 20px; 
+     width: 180px; 
     background-image: url(/public/images/Logo.png);
     background-position: center;
     background-size: cover;
@@ -76,7 +73,7 @@ li:hover {
 /* strip */
 .conteainer-strip {
     color: aliceblue;
-    background-color: #002d2d;
+    background-color: #002d2d;  
 }
 
 .main-strip {
@@ -103,6 +100,7 @@ li:hover {
     width: 1000px;
     background-position: center;
     background-size: cover;
+    position: 0px;
     margin: 0;
 
 }
