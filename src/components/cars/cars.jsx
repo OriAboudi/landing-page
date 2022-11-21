@@ -12,10 +12,10 @@ function Cars() {
     }
     useEffect(() => {
         doApi();
-    }, [])
+    }, [car])
     return (
         <div>
-            {car[0]?._id&&car[0].company}
+            {car[0]?._id && car[0].company}
         </div>
     )
 }
