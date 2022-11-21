@@ -28,7 +28,7 @@ function Crypto() {
         <div>
             <div className="container">
             <h2 className='text-center display-2 my-4'>List Of Currenies Crypto</h2>
-                <div className="row m-4">
+                <div className="row m-4 justify-content-around">
                     {arr?.map((item, i) => // Sending Props To Child Coins With Item And key={i}
                         <Coins key={i} item={item} />
                     )}
