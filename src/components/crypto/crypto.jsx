@@ -1,14 +1,15 @@
 import axios from 'axios';
 import React from 'react'
 import { useState, useEffect } from 'react'
-import ListCrypto from './listCrypto';
+import Coins from './coins';
+
 
 
 function Crypto() {
 
-    const [arr, setArr] = useState([]);
+    const [arr, setArr] = useState([]); //State For List Of Crypto Coins
 
-    const doApi = async () => {
+    const doApi = async () => { // Get Coins From API By Model Axios And Updated setArr
         try {
             let url = 'http://fs1.co.il/bus/bitcoin.php';
             const { data } = await axios.get(url);
@@ -18,7 +19,7 @@ function Crypto() {
         }
 
     };
-    useEffect(() => {
+    useEffect(() => { // Initialize The Function doApi 
         doApi()
     }, [])
 
@@ -28,8 +29,8 @@ function Crypto() {
             <div className="container">
             <h2 className='text-center display-2 my-4'>List Of Currenies Crypto</h2>
                 <div className="row m-4">
-                    {arr?.map((item, i) =>
-                        <ListCrypto key={i} item={item} />
+                    {arr?.map((item, i) => // Sending Props To Child Coins With Item And key={i}
+                        <Coins key={i} item={item} />
                     )}
                 </div>
             </div>
