@@ -6,13 +6,30 @@ import Item from './item';
 
 function Cars() {
     const [ar, setAR] = useState([]);
+    const [category, setCategory] = useState([]);
+    const [query] = use
 
+    const getCategory = (_data) => {
+        const cat = [];
+        _data.forEach(item => {
+            if (!cat.includes(item.category)) {
+                cat.push(item.category);
+            }
+        });
+        setCategory(cat)
+        console.log(cat);
+    }
 
     const doApi = async () => {
         try {
-            let url = 'https://project-yarin.herokuapp.com/cars?perPage=99';
+            let url = `https://project-yarin.herokuapp.com/cars${"?perPage=99"}`;
             const { data } = await axios.get(url);
             console.log(data);
+            getCategory(data)
+
+
+
+
             setAR(data)
 
         } catch (err) {
