@@ -1,15 +1,16 @@
 
+import React from 'react';
 import './App.css';
-import Cars from './components/cars/cars';
+// import Cars from './components/cars/cars';
 
-
+import Form from './components/form/form';
 
 function App() {
   return (
     <div className="App">
+      <Form />
+      {/* <Cars/> */}
 
-      <Cars/>
-     
     </div>
   );
 }
