@@ -25,7 +25,7 @@ function Cars() {
 
     const doApi = async () => {
         try {
-            let url = `https://project-yarin.herokuapp.com/cars?perPage=99`;
+            let url = `https://api-cars-oriaboudi.cyclic.app/cars/?perPage=999`;
             const { data } = await axios.get(url);
             getCategory(data)
             let carsFilterd = [...data]
