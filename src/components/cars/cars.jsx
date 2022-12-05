@@ -44,7 +44,7 @@ function Cars() {
 
     return (
         <div>
-            <h1 className='text-center display-3 my-4'>List Cars</h1>
+            <h1 className='text-center display-3 my-4'>List Of Cars</h1>
             <div className='container'>
                 <div className='col-md-3 ms-5'>
                     <select ref={selectRef} onChange={() => {
