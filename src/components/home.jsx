@@ -2,7 +2,9 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import './Loading.css'
+import './css/main.css'
+
+
 
 
 
@@ -13,10 +15,9 @@ const Home = () => {
   const [query] = useSearchParams()
   const input_ref = useRef()
   const nav = useNavigate()
-
   useEffect(() => {
 
-    doApi()
+    doApi();
 
   }, [query])
 
@@ -58,10 +59,10 @@ const Home = () => {
   }
   // let loadingGPT = <img src='https://external-preview.redd.it/afMq7pl_PpRPMnxc57OX5jAmocEYfjnB8FW7liddzL8.jpg?auto=webp&s=f659450f50a5e6faddf33b9d32e9f671a09e86c0' />
   return (
-    <div className='container '>
-      <div className='col-8 col-md-5 col-lg-6 d-flex m-auto pt-4 '>
+    <div className='container app'>
+      <div className='col-8 col-md-6 col-lg-6 d-flex m-auto pt-4 '>
         <input placeholder='Enter Location' ref={input_ref} className=' form-control ' type="text" />
-        <button className='btn btn-dark mx-4' onClick={() => {
+        <button className='btn btn-dark ms-4' onClick={() => {
           console.log(input_ref.current.value);
           nav('?city=' + input_ref.current.value)
 
@@ -69,7 +70,7 @@ const Home = () => {
         }}>Search</button>
       </div>
 
-      {loading ? <div className='d-flex align-items-center justify-content-center'></div> :
+      {loading ? <div  className='mt-4'><h2>Loading...</h2></div> :
         <div className='main'>
 
 
@@ -98,10 +99,11 @@ const Home = () => {
               <p>Sunries</p>
             </div>
             <div className=" sunset">
-              <figure>
+          
                 <p className='bold'>{new Intl.DateTimeFormat('en-US',{hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset*1000)}</p>
                 <p>Sunset</p>
-              </figure>
+         
+     
             </div>
           </div>
 
