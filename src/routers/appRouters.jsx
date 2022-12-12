@@ -1,32 +1,27 @@
 import React from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import Home from '../components/home'
-import HomeAdmin from '../components/homeAdmin'
-import Page1 from '../components/page1'
-import Page2 from '../components/page2'
-import Page3 from '../components/page3'
-import LayoutAdmin from '../layout/layoutAdmin/layoutAdmin'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Form from '../components/form/form';
+import Login from '../components/form/login';
+import Home from '../components/home';
+import Layout from '../layout/layout';
+const AppRouters = () => {
 
-
-import Layout from '../layout/layoutUser/layout'
-
-function AppRouters() {
   return (
     <Router>
       <Routes>
+    {/* User Layout */}
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path='/page1' element={<Page1 />} />
-          <Route path='/page2' element={<Page2 />} />
-          <Route path='/page3' element={<Page3 />} />
+          <Route path='/signUp' element={<Form />} />
+          <Route path='/login' element={<Login />} />
         </Route>
 
-        <Route path='/admin' element={<LayoutAdmin />}>
-          <Route path='/admin' element={<HomeAdmin />} />
-        </Route>
 
-        <Route path='/*' element={<h1>Page Not Found!</h1>} />
+{/* Not Found */}
+        <Route path='/*' element={<h1>Not Found 404</h1>} />
       </Routes>
+
+
     </Router>
   )
 }
