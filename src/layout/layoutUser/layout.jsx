@@ -4,7 +4,7 @@ import Header from './header/header'
 function Layout() {
     return (
         <div>
-            <Header />
+            {/* <Header /> */}
             <Outlet />
         </div>
     )
