@@ -2,11 +2,12 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import Waether from './waether';
+
 import './css/main.css'
-import Top from './top';
-import Middel from './middel';
-import Button from './button';
+
+import TopWeather from './topWeather';
+import MiddelForecast from './middelForecast';
+import ButtonInfo from './buttonInfo';
 const Home = () => {
 
   const [data, setData] = useState({});
@@ -68,9 +69,11 @@ const Home = () => {
     try {
       let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
       const { data } = await axios.get(urlForecast)
-      const objForecast = data;
+      // const objForecast = data;
 
       const arr = [
+        { ori: "sdsda" },
+        { ori: "sdsda" },
         { ori: "sdsda" }
       ]
       setForecast(arr)
@@ -99,15 +102,13 @@ const Home = () => {
       </div>
 
       {loading ? <div className='mt-4'><h2>Loading...</h2></div> :
-        <div>
+        <div className='main'>
 
-          <Top data={data}/>
-          <Middel data={forecast}/>
-          <Button data={data}/>
+          <TopWeather data={data}/>
+          <MiddelForecast data={forecast}/>
+          <ButtonInfo data={data}/>
          
         </div>
-
-
       }
     </div>
   )

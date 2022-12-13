@@ -1,20 +1,21 @@
 import React from 'react'
+import './css/main.css'
 
-function Button() {
-  return (
-    <div>
-        
-        <div className="button">
+function ButtonInfo(props) {
+
+    const data = props.data;
+
+    return (
+        <div>
+
+            <div className="button">
                 <div className=" sunrise">
                     <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
                     <p>Sunries</p>
                 </div>
                 <div className=" sunset">
-
                     <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset * 1000)}</p>
                     <p>Sunset</p>
-
-
                 </div>
             </div>
 
@@ -32,8 +33,9 @@ function Button() {
                     <p >Wind Speed</p>
                 </div>
             </div>
-    </div>
-  )
+
+        </div>
+    )
 }
 
-export default Button
+export default ButtonInfo
