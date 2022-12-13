@@ -116,6 +116,20 @@ const Home = () => {
           </div>
 
 
+
+          <div className="bimg">
+            <div className='bold ms-2'>sunDay <img src={`icons/${forecast.list[0].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
+            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
+          </div>
+          <div className="bimg">
+            <div className='bold ms-2'>SunDay <img src={`icons/${forecast.list[1].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
+            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
+          </div>     <div className="bimg">
+            <div className='bold ms-2'>SunDay <img src={`icons/${forecast.list[2].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
+            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
+          </div>
+     
+         
           <div className="button">
             <div className=" sunrise">
               <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
@@ -144,19 +158,18 @@ const Home = () => {
               <p >Wind Speed</p>
             </div>
           </div>
-     
-     
 
 
-          <div className="button">
-        {forecast.map(item=>{
-          <Home item={item}/>
-        })}
-          </div>
+
+
+
+
 
 
 
         </div>
+
+
       }
 
 

@@ -46,3 +46,17 @@
   .bold{
     font-weight: 700;
   }
+  .img{
+    max-height: 40px;
+   
+  }
+  .bimg{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    margin: 0.3rem auto;
+    padding: 0.4rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
