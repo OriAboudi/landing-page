@@ -2,21 +2,20 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
+import Waether from './waether';
 import './css/main.css'
-
-
-
-
-
+import Top from './top';
+import Middel from './middel';
+import Button from './button';
 const Home = () => {
 
   const [data, setData] = useState({});
-  const [forecast, setForecast] = useState({});
-
-  const [loading, setLoading] = useState(true);
   const [query] = useSearchParams()
+  const [loading, setLoading] = useState(true);
+  const [forecast, setForecast] = useState([]);
   const input_ref = useRef()
   const nav = useNavigate()
+
   useEffect(() => {
 
     doApiWeather();
@@ -70,15 +69,24 @@ const Home = () => {
       let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
       const { data } = await axios.get(urlForecast)
       const objForecast = data;
-      console.log(objForecast);
-      setForecast(objForecast)
-      console.log(forecast);
+
+      const arr = [
+        { ori: "sdsda" }
+      ]
+      setForecast(arr)
+      setLoading(false);
+      // console.log(objForecast);
+      // setForecast(objForecast)
+      // console.log(forecast);
     } catch (error) {
       console.log(error);
     }
   }
   // let loadingGPT = <img src='https://external-preview.redd.it/afMq7pl_PpRPMnxc57OX5jAmocEYfjnB8FW7liddzL8.jpg?auto=webp&s=f659450f50a5e6faddf33b9d32e9f671a09e86c0' />
   return (
+    // <div>
+    //  
+    // </div>
     <div className='container app'>
       <div className='col-8 col-md-6 col-lg-6 d-flex m-auto pt-4 '>
         <input placeholder='Enter Location' ref={input_ref} className=' form-control ' type="text" />
@@ -91,88 +99,16 @@ const Home = () => {
       </div>
 
       {loading ? <div className='mt-4'><h2>Loading...</h2></div> :
-        <div className='main'>
+        <div>
 
-
-          <div className='top'>
-            <div className="city">
-              <p className='ps-4 pt-4' > {data.location.city}</p>
-            </div>
-
-            <div className='temp d-flex justify-content-between'>
-              <h1 className='ps-3 '>{data.weather.temp.toFixed()}℃</h1>
-              <img src={`icons/${data.icon}.png`} className='h-100 ' alt="waether" />
-
-            </div>
-
-            <div className='d-flex align-items-center'>
-
-              <p className='ps-4'>{data.weather.desc}</p>
-            </div>
-
-            {/* </div> */}
-            {/* <div className="description">
-            </div> */}
-          </div>
-
-
-
-          <div className="bimg">
-            <div className='bold ms-2'>sunDay <img src={`icons/${forecast.list[0].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
-            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
-          </div>
-          <div className="bimg">
-            <div className='bold ms-2'>SunDay <img src={`icons/${forecast.list[1].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
-            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
-          </div>     <div className="bimg">
-            <div className='bold ms-2'>SunDay <img src={`icons/${forecast.list[2].weather[0].icon}.png`} className=' img ' alt="waether" /></div>
-            <div className='d-flex align-items-center '> <div className='me-3'>{data.weather.desc}</div> <div className='me-2'>{data.weather.temp.toFixed()}℃</div>  </div>
-          </div>
-     
+          <Top data={data}/>
+          <Middel data={forecast}/>
+          <Button data={data}/>
          
-          <div className="button">
-            <div className=" sunrise">
-              <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
-              <p>Sunries</p>
-            </div>
-            <div className=" sunset">
-
-              <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset * 1000)}</p>
-              <p>Sunset</p>
-
-
-            </div>
-          </div>
-
-          <div className="button">
-            <div className="feels">
-              <p className='bold'>{data.weather.temp.toFixed()}</p>
-              <p >Feels Like</p>
-            </div>
-            <div className="humidity">
-              <p className='bold'>{data.weather.humidity}%</p>
-              <p >Humidity</p>
-            </div>
-            <div className="wind">
-              <p className='bold'>{data.weather.wind} HPM</p>
-              <p >Wind Speed</p>
-            </div>
-          </div>
-
-
-
-
-
-
-
-
-
         </div>
 
 
       }
-
-
     </div>
   )
 }
