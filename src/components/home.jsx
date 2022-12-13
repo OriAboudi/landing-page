@@ -11,21 +11,27 @@ import './css/main.css'
 const Home = () => {
 
   const [data, setData] = useState({});
+  const [forecast, setForecast] = useState({});
+
   const [loading, setLoading] = useState(true);
   const [query] = useSearchParams()
   const input_ref = useRef()
   const nav = useNavigate()
   useEffect(() => {
 
-    doApi();
+    doApiWeather();
+    doApiForecast()
 
   }, [query])
 
-  const doApi = async () => {
+  const doApiWeather = async () => {
     try {
       setLoading(true);
-      let url = `https://api.openweathermap.org/data/2.5/weather?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
-      const { data } = await axios.get(url)
+      let urlWeather = `https://api.openweathermap.org/data/2.5/weather?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
+
+      const { data } = await axios.get(urlWeather)
+
+      console.log(data);
 
       const obj = {
         location: {
@@ -44,7 +50,9 @@ const Home = () => {
         coord: {
           lon: data.coord.lon,
           lat: data.coord.lat
-        }
+        },
+        icon: data.weather[0].icon
+
       }
 
       console.log(obj);
@@ -56,6 +64,17 @@ const Home = () => {
     }
 
 
+  }
+  const doApiForecast = async () => {
+    try {
+      let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
+      const { data } = await axios.get(urlForecast)
+      const objForecast = data;
+      console.log(objForecast);
+      setForecast(objForecast)
+    } catch (error) {
+      console.log(error);
+    }
   }
   // let loadingGPT = <img src='https://external-preview.redd.it/afMq7pl_PpRPMnxc57OX5jAmocEYfjnB8FW7liddzL8.jpg?auto=webp&s=f659450f50a5e6faddf33b9d32e9f671a09e86c0' />
   return (
@@ -70,43 +89,45 @@ const Home = () => {
         }}>Search</button>
       </div>
 
-      {loading ? <div  className='mt-4'><h2>Loading...</h2></div> :
+      {loading ? <div className='mt-4'><h2>Loading...</h2></div> :
         <div className='main'>
 
 
           <div className='top'>
             <div className="city">
-              <p className='ps-3 pt-4' > {data.location.city}</p>
+              <p className='ps-4 pt-4' > {data.location.city}</p>
             </div>
-            <div className='temp d-flex justify-content-between'><div>
+
+            <div className='temp d-flex justify-content-between'>
               <h1 className='ps-3 '>{data.weather.temp.toFixed()}℃</h1>
+              <img src={`icons/${data.icon}.png`} className='h-100 ' alt="waether" />
 
             </div>
+
             <div className='d-flex align-items-center'>
 
-              <p>{data.weather.desc}</p>
+              <p className='ps-4'>{data.weather.desc}</p>
             </div>
-          
-            </div>
-            <div className="description">
-            </div>
+
+            {/* </div> */}
+            {/* <div className="description">
+            </div> */}
           </div>
 
 
           <div className="button">
             <div className=" sunrise">
-              <p className='bold'>{new Intl.DateTimeFormat('en-US',{hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise*1000) }</p>
+              <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
               <p>Sunries</p>
             </div>
             <div className=" sunset">
-          
-                <p className='bold'>{new Intl.DateTimeFormat('en-US',{hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset*1000)}</p>
-                <p>Sunset</p>
-         
-     
+
+              <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset * 1000)}</p>
+              <p>Sunset</p>
+
+
             </div>
           </div>
-
 
           <div className="button">
             <div className="feels">
@@ -122,6 +143,20 @@ const Home = () => {
               <p >Wind Speed</p>
             </div>
           </div>
+
+
+
+          <div className="button">
+            {forecast.map(item => 
+                <div>
+                  <p>  <img src={`icons/${item.weather[0].icon}.png`} className='h-100 ' alt="waether" /></p>
+                </div>
+              
+            )}
+          </div>
+
+
+
         </div>
       }
 
