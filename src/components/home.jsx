@@ -72,6 +72,7 @@ const Home = () => {
       const objForecast = data;
       console.log(objForecast);
       setForecast(objForecast)
+      console.log(forecast);
     } catch (error) {
       console.log(error);
     }
@@ -143,16 +144,14 @@ const Home = () => {
               <p >Wind Speed</p>
             </div>
           </div>
-
+     
+     
 
 
           <div className="button">
-            {forecast.map(item => 
-                <div>
-                  <p>  <img src={`icons/${item.weather[0].icon}.png`} className='h-100 ' alt="waether" /></p>
-                </div>
-              
-            )}
+        {forecast.map(item=>{
+          <Home item={item}/>
+        })}
           </div>
 
 
