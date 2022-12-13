@@ -2,7 +2,6 @@ import axios from 'axios'
 import React from 'react'
 import { useEffect, useState, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-
 import './css/main.css'
 
 import TopWeather from './topWeather';
@@ -101,7 +100,7 @@ const Home = () => {
 
   return (
 
-    <div className='container app'>
+    <div className='container'>
       <div className='col-8 col-md-6 col-lg-6 d-flex m-auto pt-4 '>
         <input placeholder='Enter Location' ref={input_ref} className=' form-control ' type="text" />
         <button className='btn btn-dark ms-4' onClick={() => {
@@ -117,7 +116,7 @@ const Home = () => {
 
           <TopWeather data={data} />
           <MiddelForecast data={forecast} />
-          <ButtonInfo data={data} />
+           <ButtonInfo data={data} />
 
         </div>
       }
