@@ -9,11 +9,11 @@ function ButtonInfo(props) {
         <div>
             <div className="button">
                 <div className=" sunrise">
-                    <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
+                    <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric' }).format(data.location.sunrise * 1000)}</p>
                     <p>Sunries</p>
                 </div>
                 <div className=" sunset">
-                    <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunset * 1000)}</p>
+                    <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric' }).format(data.location.sunset * 1000)}</p>
                     <p>Sunset</p>
                 </div>
             </div>

@@ -71,25 +71,28 @@ const Home = () => {
       console.log(data);
       const arrForceast = [
         {
+          day:data.list[0].dt,
           icons: data.list[0].weather[0].icon,
           temp: data.list[0].main.temp_max,
           desc: data.list[0].weather[0].description
 
         },
         {
-          icons: data.list[1].weather[0].icon,
-          temp: data.list[1].main.temp_max,
-          desc: data.list[1].weather[0].description
+          day: data.list[7].dt,
+          icons: data.list[7].weather[0].icon,
+          temp: data.list[7].main.temp_max,
+          desc: data.list[7].weather[0].description
 
         }, {
-          icons: data.list[1].weather[0].icon,
-          temp: data.list[1].main.temp_max,
-          desc: data.list[1].weather[0].description
+          day:data.list[14].dt,
+          icons: data.list[14].weather[0].icon,
+          temp: data.list[14].main.temp_max,
+          desc: data.list[14].weather[0].description
         }
 
 
       ]
-
+console.log(arrForceast[0].day);
       setForecast(arrForceast)
       console.log(arrForceast);
       setLoading(false);
