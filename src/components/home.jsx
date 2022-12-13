@@ -68,28 +68,39 @@ const Home = () => {
   const doApiForecast = async () => {
     try {
       let urlForecast = `https://api.openweathermap.org/data/2.5/forecast?q=${query.get('city') || "tel%20aviv"}&appid=6692341014244b16b26d894eca7afd60&units=metric`
-      const { data } = await axios.get(urlForecast)
-      // const objForecast = data;
+      const { data } = await axios.get(urlForecast);
+      console.log(data);
+      const arrForceast = [
+        {
+          icons: data.list[0].weather[0].icon,
+          temp: data.list[0].main.temp_max,
+          desc: data.list[0].weather[0].description
 
-      const arr = [
-        { ori: "sdsda" },
-        { ori: "sdsda" },
-        { ori: "sdsda" }
+        },
+        {
+          icons: data.list[1].weather[0].icon,
+          temp: data.list[1].main.temp_max,
+          desc: data.list[1].weather[0].description
+
+        }, {
+          icons: data.list[1].weather[0].icon,
+          temp: data.list[1].main.temp_max,
+          desc: data.list[1].weather[0].description
+        }
+
+
       ]
-      setForecast(arr)
+
+      setForecast(arrForceast)
+      console.log(arrForceast);
       setLoading(false);
-      // console.log(objForecast);
-      // setForecast(objForecast)
-      // console.log(forecast);
     } catch (error) {
       console.log(error);
     }
   }
-  // let loadingGPT = <img src='https://external-preview.redd.it/afMq7pl_PpRPMnxc57OX5jAmocEYfjnB8FW7liddzL8.jpg?auto=webp&s=f659450f50a5e6faddf33b9d32e9f671a09e86c0' />
+
   return (
-    // <div>
-    //  
-    // </div>
+
     <div className='container app'>
       <div className='col-8 col-md-6 col-lg-6 d-flex m-auto pt-4 '>
         <input placeholder='Enter Location' ref={input_ref} className=' form-control ' type="text" />
@@ -104,10 +115,10 @@ const Home = () => {
       {loading ? <div className='mt-4'><h2>Loading...</h2></div> :
         <div className='main'>
 
-          <TopWeather data={data}/>
-          <MiddelForecast data={forecast}/>
-          <ButtonInfo data={data}/>
-         
+          <TopWeather data={data} />
+          <MiddelForecast data={forecast} />
+          <ButtonInfo data={data} />
+
         </div>
       }
     </div>

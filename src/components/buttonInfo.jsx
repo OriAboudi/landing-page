@@ -7,7 +7,6 @@ function ButtonInfo(props) {
 
     return (
         <div>
-
             <div className="button">
                 <div className=" sunrise">
                     <p className='bold'>{new Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric' }).format(data.location.sunrise * 1000)}</p>
@@ -33,8 +32,11 @@ function ButtonInfo(props) {
                     <p >Wind Speed</p>
                 </div>
             </div>
-
         </div>
+
+
+
+
     )
 }
 
