@@ -103,7 +103,7 @@ console.log(arrForceast[0].day);
 
   return (
 
-    <div className='container'>
+    <div className='container app'>
       <div className='col-8 col-md-6 col-lg-6 d-flex m-auto pt-4 '>
         <input placeholder='Enter Location' ref={input_ref} className=' form-control ' type="text" />
         <button className='btn btn-dark ms-4' onClick={() => {
