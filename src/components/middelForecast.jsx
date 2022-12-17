@@ -1,12 +1,11 @@
 import React from 'react'
-import { useState } from 'react'
 import './css/main.css'
 function MiddelForecast(props) {
     const data = props.data
 
 
     let locale = 'en-US';
-    let baseDate = new Date(Date.now()); // just a Monday
+    let baseDate = new Date(Date.now()); 
     console.log(baseDate);
     let weekDays = [];
     for (let i = 0; i < 4; i++) {
