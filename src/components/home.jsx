@@ -35,6 +35,7 @@ function Home() {
 
 
   console.log(data);
+  console.log('1111');
   {/* {loading ? <p>Loading...</p> : */ }
   return (
     <div>
