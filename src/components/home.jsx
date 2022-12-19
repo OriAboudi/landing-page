@@ -38,20 +38,23 @@ function Home() {
     <div>
       <input placeholder='Search' onKeyDown={(e) => {
         if (e.key === 'Enter') {
-          nav.get(inputRef.current.value)
+          nav('/' + inputRef.current.value)
         }
-      }} onInput={() => {
-
-
       }} ref={inputRef} type="text" />
-      {/* <div>
-        {loading ? <p>Loading...</p> : data.map((item, i) =>
 
-          <Page1 key={i} item={item} />
+      <div>
+        {!loading ? <p>Loading...</p> :
+          data.map((item, i) => {
+            return (
+
+              <Page1 key={i} item={item} />
+            )
+          })
+        }
+      </div>
 
 
-        )}
-      </div> */}
+      
     </div>
   )
 }
