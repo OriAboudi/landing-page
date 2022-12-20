@@ -1,9 +1,10 @@
-import axios from 'axios'
 
 
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import Page1 from './page1'
+
+import axios from 'axios'
 
 function Home() {
   const [data, setData] = useState([])
@@ -16,21 +17,21 @@ function Home() {
     try {
 
       setLoading(true)
-      let url = `https://www.omdbapi.com/?s=${param.search}bank&y=2020&apiKey=d592be1f`
+      let url = `https://www.omdbapi.com/?s=bank&y=2020&apiKey=d592be1f`
       const { data } = await axios.get(url);
-      // console.log(data);
+      console.log(data);
       setData(data.Search);
-      // setLoading(false);
+      setLoading(false);
 
     } catch (error) {
       console.log(error);
     }
   }
-  console.log(data);
+
 
   useEffect(() => {
     doApi();
-  }, [])
+  }, [param])
 
 
 
@@ -44,7 +45,7 @@ function Home() {
       }} ref={inputRef} type="text" />
 
       <div>
-        {!loading ? <p>Loading...</p> :
+        {loading ? <p>Loading...</p> :
 
           data.map((item, i) => {
             return (
