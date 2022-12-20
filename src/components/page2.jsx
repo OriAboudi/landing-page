@@ -24,6 +24,20 @@ function Page2() {
   }, [])
   return (
     <div>
+      {!data ? <p>No info about this Movie</p> :
+        <div> {loading ? <p>loading</p> : <div>
+          <p>{data.Actors}</p>
+          <p>{data.Country}</p>
+          <p>{data.DVD}</p>
+          <p>{data.Director}</p>
+          <p>{data.Genre}</p>
+          <p>{data.Language}</p>
+          <p>{data.Plot}</p>
+          <p>{data.Title}</p>
+          <p>{data.Writer}</p>
+
+        </div>
+        }</div>}
 
     </div>
   )

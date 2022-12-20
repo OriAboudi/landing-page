@@ -7,15 +7,25 @@ import Page1 from './page1'
 import axios from 'axios'
 
 function Home() {
-  const [data, setData] = useState([])
-  const [loading, setLoading] = useState(false)
-  const [year, setYear] = useState(new Date().getFullYear())
-  const [timeline, setTimeline] = useState([])
-
-  const inputRef = useRef()
-  const nav = useNavigate()
-  const param = useParams()
+  const [data, setData] = useState([])// Get the data form API
+  const [loading, setLoading] = useState(false)// Checker if information has arrived
+  const [year, setYear] = useState(new Date().getFullYear()) // To get movie by year
+  const inputRef = useRef() // Listener to input 
+  const nav = useNavigate() // Navigate page
+  const param = useParams() // Listen to parameters in url
   console.log(param.search);
+
+  // Timeline//
+  let arr = [];
+  const timeline = () => {
+    let years = new Date().getFullYear()
+    for (let i = 0; i < 30; i++) {
+      arr[i] = years - i;
+    }
+  }
+  timeline()
+
+  //doApi get to data from api OMDB//
   const doApi = async () => {
     try {
       setLoading(true)
@@ -24,6 +34,7 @@ function Home() {
       const { data } = await axios.get(url);
       console.log(data.Search);
       setData(data.Search);
+
       setLoading(false);
 
     } catch (error) {
@@ -32,20 +43,10 @@ function Home() {
     }
   }
 
+  //useEffect lesson to change in param or year//
   useEffect(() => {
     doApi();
-  }, [param,year])
-
-
-
-  let years = new Date().getFullYear()
-  let arr = [];
-  for (let i = 0; i < 30; i++) {
-    arr[i] = years - i;
-  }
-
-  
-
+  }, [param, year])
 
 
   return (
