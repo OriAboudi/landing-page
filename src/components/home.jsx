@@ -17,7 +17,7 @@ function Home() {
     try {
 
       setLoading(true)
-      let url = `https://www.omdbapi.com/?s=bank&y=2020&apiKey=d592be1f`
+      let url = `https://www.omdbapi.com/?s=${param.search || "bank"}&y=2020&apiKey=d592be1f`
       const { data } = await axios.get(url);
       console.log(data);
       setData(data.Search);
@@ -25,9 +25,10 @@ function Home() {
 
     } catch (error) {
       console.log(error);
+
     }
   }
-
+  console.log();
 
   useEffect(() => {
     doApi();
@@ -45,21 +46,23 @@ function Home() {
       }} ref={inputRef} type="text" />
 
       <div>
-        {loading ? <p>Loading...</p> :
 
-          data.map((item, i) => {
-            return (
+        {data ? <div>
+          {loading ? <p>Loading...</p> :
 
-              <Page1 key={i} item={item} />
-            )
-          })
-        
-        }
+            data.map((item, i) => {
+              return (
+
+                <Page1 key={i} item={item} />
+              )
+            })
+
+          }</div> : <p>Movie Not Found</p>}
       </div>
 
 
 
-    </div>
+    </div >
   )
 }
 
