@@ -19,7 +19,7 @@ function Home() {
       setLoading(true)
       let url = `https://www.omdbapi.com/?s=${param.search || "bank"}&y=2020&apiKey=d592be1f`
       const { data } = await axios.get(url);
-      console.log(data);
+      console.log(data.Search);
       setData(data.Search);
       setLoading(false);
 

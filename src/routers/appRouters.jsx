@@ -13,7 +13,7 @@ function AppRouters() {
             <Route index element={<Home/>}/>
             <Route path='/:search' element={<Home/>}/>
             <Route path='/page1' element={<Page1/>}/>
-            <Route path='/page2' element={<Page2/>}/>
+            <Route path='/page2/:id' element={<Page2/>}/>
             <Route path='/page3' element={<Page3/>}/>
             <Route path='/*' element={<h1>Page Not Found!</h1>}/>
         </Route>
