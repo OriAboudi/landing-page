@@ -10,6 +10,7 @@ function Home() {
   const [data, setData] = useState([])
   const inputRef = useRef()
   const [loading, setLoading] = useState(false)
+  const [year, setYear] = useState('2022')
   const nav = useNavigate()
   const param = useParams()
   console.log(param.search);
@@ -17,7 +18,7 @@ function Home() {
     try {
 
       setLoading(true)
-      let url = `https://www.omdbapi.com/?s=${param.search || "bank"}&y=2020&apiKey=d592be1f`
+      let url = `https://www.omdbapi.com/?s=${param.search || "bank"}&y=${year}&apiKey=d592be1f`
       const { data } = await axios.get(url);
       console.log(data.Search);
       setData(data.Search);
@@ -32,7 +33,7 @@ function Home() {
 
   useEffect(() => {
     doApi();
-  }, [param])
+  }, [param, year])
 
 
 
