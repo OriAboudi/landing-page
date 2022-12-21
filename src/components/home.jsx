@@ -67,7 +67,7 @@ function Home() {
           {arr.map((item) => {
             return (
               <button
-                className="border-t-neutral-50 p-2 ml-6 sm:none"
+                className="border-t-neutral-50 p-1 ml-8 sm:none"
                 onClick={() => {
                   setYear(item);
                 }}
@@ -84,7 +84,7 @@ function Home() {
             onChange={() => {
               setYear(ref_select.current.value);
             }}
-             className="bg-slate-500 w-[150px] h-[30px] hover:bg-gray-600 border rounded-[30px] pl-[15px] mr-[50px]"
+             className="bg-slate-500 w-[150px] h-[30px] hover:bg-gray-600 border rounded-[30px] pl-[15px] mr-[30px]"
           >
             <option  >Select Year...</option>
             {arrSelect.map((item) => {
@@ -97,6 +97,7 @@ function Home() {
           </select>
         </div>
       </div>
+      <hr className="mx-[34px] my-3" />
       {/* data */}
       <div>
         {data ? (
