@@ -1,15 +1,14 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Header from './heaser/header'
-import Navbar from './heaser/Navbar'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Header from "./heaser/header";
+
 function Layout() {
-    return (
-        <div>
-            {/* <Header /> */}
-            <Navbar/>
-            <Outlet />
-        </div>
-    )
+  return (
+    <div>
+      <Header />
+      <Outlet />
+    </div>
+  );
 }
 
-export default Layout
+export default Layout;
