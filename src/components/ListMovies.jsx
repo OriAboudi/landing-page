@@ -6,7 +6,7 @@ function Page1(props) {
 
   return (
     <div className="m-auto  ">
-      <Link to={"/page2/" + item.imdbID}>
+      <Link to={"/MoviesInfo/" + item.imdbID}>
         <img
           className="p-4 w-full h-auto block rounded-[50px]"
           src={item.Poster}

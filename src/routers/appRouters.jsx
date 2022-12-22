@@ -1,9 +1,8 @@
 import React from 'react'
 import { BrowserRouter as Router,Routes,Route } from 'react-router-dom'
 import Home from '../components/home'
-import Page1 from '../components/page1'
-import Page2 from '../components/page2'
-import Page3 from '../components/page3'
+import Page1 from '../components/ListMovies'
+import Page2 from '../components/MoviesInfo'
 import Layout from '../layout/layout'
 function AppRouters() {
   return (
@@ -12,9 +11,8 @@ function AppRouters() {
         <Route path='/' element={<Layout/>}>
             <Route index element={<Home/>}/>
             <Route path='/:search' element={<Home/>}/>
-            <Route path='/page1' element={<Page1/>}/>
-            <Route path='/page2/:id' element={<Page2/>}/>
-            <Route path='/page3' element={<Page3/>}/>
+            <Route path='/ListMovies' element={<Page1/>}/>
+            <Route path='/MoviesInfo/:id' element={<Page2/>}/>
             <Route path='/*' element={<h1>Page Not Found!</h1>}/>
         </Route>
     </Routes>

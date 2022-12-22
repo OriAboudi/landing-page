@@ -20,7 +20,7 @@ function Navbar() {
           }}
           ref={inputRef}
           type="text"
-          className="shadow appearance-none   rounded-[30px] w-full py-2 px-4 bg-gray-800 text-amber-50  leading-tight focus:outline-none focus:shadow-outline"
+          className="shadow appearance-none   rounded-[30px] w-full py-2 px-4 bg-gray-800 text-amber-50  leading-tight focus:outline-none focus:shadow-outline hover:bg-red-600"
         />
       </div>
     </div>
