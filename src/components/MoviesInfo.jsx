@@ -1,7 +1,10 @@
+
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 import { useNavigate,Link, useParams } from 'react-router-dom'
+import { Rating} from '@mui/material';
+import StarHalfIcon from '@mui/icons-material/StarHalf';
 
 function MoviesInfo() {
 
@@ -35,36 +38,35 @@ function MoviesInfo() {
 </div>
 
 <div  className=' m-[36px] w-[250px]  flex-col items-baseline text-center'>
-  <div className=''>
-  <h2 className='text-[30px]'>{data.Title}</h2>
+     <div className=''>
+         <h2 className='text-[30px]'>{data.Title}</h2>
           <p className='text-lg '>Country:<span className='text-base'>{data.Country}</span> </p>
           <p>DVD: {data.DVD}</p>
           <p>Director: {data.Director}</p>
           <p>Genre: {data.Genre}</p>
           <p>Language: {data.Language}</p>
         
-<p>Actors: {data.Actors}</p>
+          <p>Actors: {data.Actors}</p>
           <p>Writer:{data.Writer}</p>
-          <p>Ratings:{data.Ratings[0].Value}</p>
-       
-        
+          {/* <p>Ratings:{data.Ratings[0].Value}</p> */}
+      
 
-
-
-  </div>
-  
-</div>
-
-
-
-       
-
-        </div>
-        }</div>}
-
-
+<Rating
+  name="customized-10"
+  value={data.imdbRating}
+  max={10}
+  readOnly
+  precision={0.5}
+  emptyIcon={<StarHalfIcon style={{ opacity: 0.55, color:'wheat' }} fontSize="inherit" />}
+/>
+       </div> 
+      </div>
     </div>
-    <div className='flex justify-center my-[36px] '>
+ }</div>}
+
+
+</div>
+<div className='flex justify-center my-[36px] '>
 <Link to={'/'} className=' bg-red-600 hover:bg-gray-800 py-3 px-[56px] rounded-[30px]'>Back </Link>
 
       </div>
