@@ -12,7 +12,14 @@ function Home() {
   const param = useParams(); // Listen to parameters in url
   console.log(param.search);
 
-  // Timeline//
+  //useEffect lesson to change in param or year//
+  useEffect(() => {
+    doApi()
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [param, year]);
+
+
+  // Timeline list //
   let arr = [];
   const timeline = () => {
     let years = new Date().getFullYear() - 2;
@@ -22,7 +29,7 @@ function Home() {
     }
   };
   timeline();
-
+  // Timeline select //
   let arrSelect = [];
   const timelineSelect = () => {
     let years = new Date().getFullYear();
@@ -51,10 +58,6 @@ function Home() {
     }
   };
 
-  //useEffect lesson to change in param or year//
-  useEffect(() => {
-    doApi();
-  }, [param, year]);
 
   return (
     <div className="container mx-auto">
@@ -67,7 +70,7 @@ function Home() {
         {data ? (
           <div>
             {loading ? (
-              <p>Loading...</p>
+              <div className="flex justify-center align-middle "><img src="https://media.tenor.com/UnFx-k_lSckAAAAM/amalie-steiness.gif" alt="gif" /></div >
             ) : (
               <div className="container mx-auto">
                 <div className="flex flex-wrap ">
@@ -79,7 +82,7 @@ function Home() {
             )}
           </div>
         ) : (
-          <p>Movie Not Found</p>
+          <h2 className="text-center text-[50px] mt-[50px] p-[36px]">Movie Not Found</h2>
         )}
       </div>
     </div>

@@ -5,7 +5,8 @@ function Page1(props) {
   let item = props.item;
 
   return (
-    <div className="m-auto  ">
+    <div className="m-auto  "> 
+    {/* pass props to MoveisInfo.jsx */}
       <Link to={"/MoviesInfo/" + item.imdbID}>
         <img
           className="p-4 w-full h-auto block rounded-[50px]"
