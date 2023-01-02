@@ -15,7 +15,7 @@ function MoviesInfo() {
 
   const doApiInfo = async () => {
     setLoading(true) // open flag for loading 
-    let url = `http://www.omdbapi.com/?i=${param.id}&apiKey=d592be1f`;
+    let url = `https://www.omdbapi.com/?i=${param.id}&apiKey=d592be1f`;
     const { data } = await axios.get(url)
     console.log(data);
     setData(data) // update data from API response
