@@ -48,7 +48,7 @@ function Home() {
       let url = `https://www.omdbapi.com/?s=${
         param.search || "bank"
       }&y=${year}&apiKey=d592be1f`;
-      const { data } = await axios.get(url);
+      const { data } = await axios.get(url);// Or edit in get request ,{mode: 'no-cors'}
       console.log(data.Search);
       setData(data.Search);
 
