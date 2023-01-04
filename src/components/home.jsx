@@ -19,10 +19,10 @@ function Home() {
   }, [param, year]);
 
 
-  // Timeline list //
+  // Timeline Top Year //
   let arr = [];
   const timeline = () => {
-    let years = new Date().getFullYear() - 2;
+    let years = new Date().getFullYear() - 3;
 
     for (let i = 0; i < 6; i++) {
       arr[i] = years - i * 10;
