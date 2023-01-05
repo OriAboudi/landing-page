@@ -1,5 +1,6 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./heaser/Footer";
 import Header from "./heaser/header";
 
 function Layout() {
@@ -7,6 +8,7 @@ function Layout() {
     <div>
       <Header />
       <Outlet />
+      <Footer/>
     </div>
   );
 }

@@ -1,15 +1,14 @@
 import React, { useRef } from "react";
 
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Navbar() {
   const inputRef = useRef(); // Listener to input
   const nav = useNavigate(); // Navigate page
   return (
     <div className="flex items-center justify-between p-4 z-[100] w-full absolute">
-      <h1 className="text-red-600 text-4xl font-bold cursor-pointer">
-        OMDB Movies
-      </h1>
+
+      <Link className="text-red-600 text-4xl font-bold cursor-pointer   transition ease-in-out delay-150 hover:-translate-y-1  hover:scale-110 hover: duration-300 ..." to={'/'}>      OMDB Movies</Link>
       <div>
         <input
           placeholder="Search..."

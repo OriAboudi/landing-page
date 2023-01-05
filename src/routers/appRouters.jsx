@@ -13,7 +13,7 @@ function AppRouters() {
             <Route path='/:search' element={<Home/>}/>
             <Route path='/ListMovies' element={<Page1/>}/>
             <Route path='/MoviesInfo/:id' element={<Page2/>}/>
-            <Route path='/*' element={<h1>Page Not Found!</h1>}/>
+            <Route path='/*' element={<h1 className='text-center mt-[50px] text-[50px]'>Page Not Found!</h1>}/>
         </Route>
     </Routes>
 </Router>
