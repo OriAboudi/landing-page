@@ -1,53 +1,25 @@
 import React from 'react'
 import { useRef } from "react";
-import { Fragment } from 'react'
-import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { Link } from 'react-router-dom'
-import {FaLock} from 'react-icons/fa'
-
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { Disclosure } from '@headlessui/react'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 
 
 
 
 function TimeLine({ setYear, arr, arrSelect }) { // Get props from Home.jsx
   const ref_select = useRef();
-
-
-  const navigation = [
-    { name: 'Home', href: '/', current: true }
-
-    // {arr.map((item) => {
-    //   return (
-    //     <button
-    //       className="border-t-neutral-50  ml-8 sm:none hover:bg-red-600 rounded-[50px] p-2"
-    //       onClick={() => {
-    //         setYear(item);
-    //       }}
-    //     >
-    //       {item}
-    //     </button>
-    //   );
-    // })}
-  
-  ]
   
   return (
     <div>
+      
         {/* top year data */}
       <div className="flex justify-between mt-4">
         <Disclosure as="nav" className="">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
-            
             <div className="relative flex h-16 items-center justify-between">
       
-            
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 
@@ -66,7 +38,6 @@ function TimeLine({ setYear, arr, arrSelect }) { // Get props from Home.jsx
                     
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
       
-                
                 <div className="hidden sm:ml-6 sm:block">
           
                   <div className="flex space-x-4">
@@ -107,10 +78,8 @@ function TimeLine({ setYear, arr, arrSelect }) { // Get props from Home.jsx
       )}
     </Disclosure>
 
-
-
-
         {/* select data */}
+
         <div className="mt-[18px]" >
 
           <select
